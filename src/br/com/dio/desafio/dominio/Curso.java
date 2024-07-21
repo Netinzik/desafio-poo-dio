@@ -1,6 +1,6 @@
 package br.com.dio.desafio.dominio;
 
-public class Curso extends Conteudo{
+public class Curso extends Conteudo {
 
     private int cargaHoraria;
 
@@ -9,16 +9,19 @@ public class Curso extends Conteudo{
         return XP_PADRAO * cargaHoraria;
     }
 
-    public Curso() {
-    }
+    public Curso() {}
 
-
+    // Getters e Setters
     public int getCargaHoraria() {
         return cargaHoraria;
     }
 
     public void setCargaHoraria(int cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
+        if (cargaHoraria > 0) {
+            this.cargaHoraria = cargaHoraria;
+        } else {
+            throw new IllegalArgumentException("Carga horária deve ser positiva.");
+        }
     }
 
     @Override
